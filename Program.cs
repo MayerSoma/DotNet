@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Running;
 using DotNet.Async;
+using DotNet.DesignPatterns.Behavioral;
 using DotNet.DesignPatterns.Creational;
 
 #region Async
@@ -27,7 +28,9 @@ using DotNet.DesignPatterns.Creational;
 
 #endregion LINQ
 
-#region DesignPatterns
+#region Design Patterns
+
+#region Creational Patterns
 
 #region Singleton
 
@@ -94,6 +97,140 @@ using DotNet.DesignPatterns.Creational;
 
 #endregion Prototype
 
-#endregion #region DesignPatterns
+#region Factory Method
+
+//// Get the entire object back with one call, not like the builder
+//// where u can adjust the object state before building it.
+
+//ICreditCard cardDetails = CreditCardFactory.GetCreditCard("Platinum");
+
+//if (cardDetails != null)
+//{
+//    Console.WriteLine("CardType : " + cardDetails.GetCardType());
+//    Console.WriteLine("CreditLimit : " + cardDetails.GetCreditLimit());
+//    Console.WriteLine("AnnualCharge :" + cardDetails.GetAnnualCharge());
+//}
+//else
+//{
+//    Console.Write("Invalid Card Type");
+//}
+//Console.ReadLine();
+
+#endregion
+
+#region Abstract Factory
+
+#endregion Abstract Factory
+
+#endregion Creational Patterns
+
+#region Behavioral Patterns
+
+#region Strategy
+
+//SortedList studentRecords = new();
+
+//studentRecords.Add("Samual");
+//studentRecords.Add("Jimmy");
+//studentRecords.Add("Sandra");
+//studentRecords.Add("Vivek");
+//studentRecords.Add("Anna");
+
+//studentRecords.SetSortStrategy(new QuickSort());
+//studentRecords.Sort();
+
+//studentRecords.SetSortStrategy(new ShellSort());
+//studentRecords.Sort();
+
+//studentRecords.SetSortStrategy(new MergeSort());
+//studentRecords.Sort();
+
+#endregion Strategy
+
+#region State
+
+////The State pattern is a behavioral design pattern that allows an object
+////to change its behavior when its internal state changes.
+
+////The State pattern is useful when the behavior of an object depends on its
+////state and needs to change dynamically when its state changes.
+
+
+//var invoice = new Invoice(123, 1000m, "Software Dev Services 1");
+
+//invoice.Pay();
+//invoice.Refund();
+
+//var invoice2 = new Invoice(1234, 1000m, "Software Dev Services 2");
+
+//invoice2.Cancel();
+//invoice2.Pay();
+
+//var invoice3 = new Invoice(1235, 1000m, "Software Dev Services 3");
+
+//invoice3.Refund();
+//invoice3.Cancel();
+
+
+//Console.WriteLine();
+
+#endregion State
+
+#region Iterator
+
+//var months = new Months();
+
+//// fiscal month start in Jan by default
+//Console.WriteLine("Fiscal month start in January:");
+//var iterator = months.CreateIterator();
+//while (iterator.MoveNext())
+//{
+//    Console.Write($"{iterator.Current} ");
+//}
+
+//Console.WriteLine();
+
+//// fiscal month start in April
+//Console.WriteLine("Fiscal month start in April:");
+//months.FiscalMonthStart = 4;
+
+//iterator = months.CreateIterator();
+//while (iterator.MoveNext())
+//{
+//    Console.Write($"{iterator.Current} ");
+//}
+//Console.WriteLine();
+
+#endregion Iterator
+
+#region Observer
+
+//var stock = new Stock("ABC", 100m);
+
+//// Create two observers Display & Logger
+//var display = new Display(stock);
+//var logger = new Logger(stock, "stock.txt");
+
+//// Change the price, both display and logger
+//// will be notified and updated
+//stock.Price += 2;
+//stock.Price -= 1;
+
+//Console.ReadLine();
+
+//// remove the logger from the observer list
+//stock.Unsubscribe(logger);
+
+//// Change the price, only the display is notified 
+//// and updated
+//stock.Price += 3;
+
+//Console.ReadLine();
+
+#endregion Observer
+
+#endregion Behavioral Patterns
+
+#endregion Design Patterns
 
 var asd = 1;
